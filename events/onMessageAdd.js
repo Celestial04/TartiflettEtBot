@@ -7,7 +7,7 @@ module.exports = {
     async execute(msg) {
         if (msg.author.bot === false) {
             console.log(`➕💬 ${msg.author.username} → ${msg.channel.name}: ${msg.content} [${moment().format(('MMMM Do YYYY, h:mm:ss a'))}]`);
-            const targetChannel = await msg.client.channels.fetch(msg.channel.id);
+            const targetChannel = await msg.client.channels.fetch('1503125090815185017');
             const embed = new EmbedBuilder()
                 .setColor("Green")
                 .setTitle('➕💬 Message envoyé')
