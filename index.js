@@ -1,4 +1,4 @@
-import { Events, Client, Collection, GatewayIntentBits, GuildMemberManager } from "discord.js";
+import { Client, Collection, GatewayIntentBits } from "discord.js";
 const fs = require('node:fs');
 const path = require('node:path');
 const client = new Client({
@@ -6,6 +6,7 @@ const client = new Client({
 		GatewayIntentBits.Guilds,
 		GatewayIntentBits.GuildMessages,
 		GatewayIntentBits.MessageContent,
+		GatewayIntentBits.GuildMessageReactions,	
 		GatewayIntentBits.GuildMembers,
 	],
 });

@@ -7,7 +7,7 @@ module.exports = {
     async execute(oldMsg, newMsg) {
         if (oldMsg.author.bot === false) {
             console.log(`➖💬 ${oldMsg.author.username} → ${oldMsg.channel.name}: "${oldMsg.content}" 🔁 "${newMsg.content}" [${moment().format(('MMMM Do YYYY, h:mm:ss a'))}]`);
-            const targetChannel = await oldMsg.client.channels.fetch(oldMsg.channel.id);
+            const targetChannel = await oldMsg.client.channels.fetch('1503147444932972706');
              const embed = new EmbedBuilder()
                  .setColor("Orange")
                  .setTitle('🔁💬 Message mis à jour')
