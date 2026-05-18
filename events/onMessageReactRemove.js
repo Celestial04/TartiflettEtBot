@@ -11,15 +11,15 @@ module.exports = {
             console.log(`➖💬 ${User.name} → ${msgReact.message.channel.name}: "${msgReact.message.content}" "${msgReact.message.content}" [${moment().format(('MMMM Do YYYY, h:mm:ss a'))}]`);
             const targetChannel = await msgReact.client.channels.fetch('1504030112662949908');
             const embed = new EmbedBuilder()
-                .setColor("Green")
-                .setTitle('🥺➕ Réaction Ajouté')
+                .setColor("Red")
+                .setTitle('🥺➖ Réaction retiré')
                 .setAuthor({ name: msgReact.message.author.username, iconURL: msgReact.message.author.avatarURL(), url: 'https://discord.com/users/' + msgReact.message.author.id })
-                .setDescription(msgReact.emoji.name + ' à été ajouté par <@' + User.id + '> sur le message de <@' + msgReact.message.author.id + '> disant:\n' + msgReact.message.content)
+                .setDescription(msgReact.emoji.name + ' à été retiré par <@' + User.id + '> sur le message de <@' + msgReact.message.author.id + '> disant:\n' + msgReact.message.content)
                 .setThumbnail('https://i.imgur.com/AfFp7pu.png')
                 .addFields(
                     { name: 'Créé', value: ' <t:' + Math.floor(msgReact.createdAt) + ':R>.', inline: true },
                     msgReact? { name: 'ID du message', value: msgReact.message.id, inline: true } : { name: 'ID', value: msgReact.id, inline: true },
-                    { name: 'Ajouté dans', value: '<#' + msgReact.message.channelId + '> (' + msgReact.message.channel.name + ')', inline: true },
+                    { name: 'Retiré dans', value: '<#' + msgReact.message.channelId + '> (' + msgReact.message.channel.name + ')', inline: true },
                 )
                 .setTimestamp()
                 .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
