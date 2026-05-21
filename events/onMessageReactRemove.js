@@ -2,14 +2,14 @@ const { Events, EmbedBuilder } = require('discord.js');
 const moment = require('moment')
 
 module.exports = {
-    name: Events.MessageReactionAdd,
+    name: Events.MessageReactionRemove,
     once: false,
     async execute(msgReact, User, msgReactDetails) {
 
             console.log(msgReact.emoji.name)
         if (msgReact.message.author.bot === false) {
             console.log(`➖💬 ${User.name} → ${msgReact.message.channel.name}: "${msgReact.message.content}" "${msgReact.message.content}" [${moment().format(('MMMM Do YYYY, h:mm:ss a'))}]`);
-            const targetChannel = await msgReact.client.channels.fetch('1504030112662949908');
+            const targetChannel = await msgReact.client.channels.fetch('1504030484752240823');
             const embed = new EmbedBuilder()
                 .setColor("Red")
                 .setTitle('🥺➖ Réaction retiré')
