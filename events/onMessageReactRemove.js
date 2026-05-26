@@ -17,17 +17,14 @@ module.exports = {
                 .setDescription(msgReact.emoji.name + ' à été retiré par <@' + User.id + '> sur le message de <@' + msgReact.message.author.id + '> disant:\n' + msgReact.message.content)
                 .setThumbnail('https://i.imgur.com/AfFp7pu.png')
                 .addFields(
-                    { name: 'Créé', value: ' <t:' + msgReact.emoji.createdTimestamp + ':R>.', inline: true },
-                    msgReact? { name: 'ID du message', value: msgReact.message.id, inline: true } : { name: 'ID', value: msgReact.id, inline: true },
+                    { name: 'Réagi', value: msgReact.count + ' fois.', inline: true },
                     { name: 'Retiré dans', value: '<#' + msgReact.message.channelId + '> (' + msgReact.message.channel.name + ')', inline: true },
+                    { name: 'ID du message', value: `[${msgReact.message.id}](${msgReact.message.url})`, inline: true },
                 )
                 .setTimestamp()
-                .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
-
             await targetChannel.send({
                 embeds: [embed]
             });
-            console.log('Message déreacté')
         } else {
             console.log(`❗🤖 ${msgReact.message.author.username} est un bot, inutile de log.`)
         }
