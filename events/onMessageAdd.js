@@ -13,14 +13,14 @@ module.exports = {
                 .setTitle('➕💬 Message envoyé')
                 .setAuthor({ name: msg.author.username, iconURL: msg.author.avatarURL(), url: 'https://discord.com/users/' + msg.author.id })
                 .setDescription(msg.toString())
-                .setThumbnail('https://i.imgur.com/AfFp7pu.png')
+                
                 .addFields(
                     { name: 'Créé', value: ' <t:' + Math.floor(Date.now() / 1000) + ':R>.', inline: true },
                     { name: 'ID', value: msg.id, inline: true },
                     { name: 'Envoyé dans', value: '<#' + msg.channelId + '> (' + msg.channel.name + ')', inline: true },
                 )
                 .setTimestamp()
-                .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
+                
 
                 await targetChannel.send({
                     embeds: [embed]

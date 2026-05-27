@@ -7,20 +7,20 @@ module.exports = {
     async execute(oldMsg, newMsg) {
         if (oldMsg.author.bot === false) {
             console.log(`➖💬 ${oldMsg.author.username} → ${oldMsg.channel.name}: "${oldMsg.content}" 🔁 "${newMsg.content}" [${moment().format(('MMMM Do YYYY, h:mm:ss a'))}]`);
-            const targetChannel = await oldMsg.client.channels.fetch('1503147444932972706');
+            const targetChannel = await oldMsg.client.channels.fetch(process.env.MSG_UPDT);
              const embed = new EmbedBuilder()
                  .setColor("Orange")
                  .setTitle('🔁💬 Message mis à jour')
                  .setAuthor({ name: oldMsg.author.username, iconURL: oldMsg.author.avatarURL(), url: 'https://discord.com/users/' + oldMsg.author.id })
                  .setDescription('**Original**\n' + oldMsg.toString() + '\n**Édité**\n' + newMsg.toString())
-                 .setThumbnail('https://i.imgur.com/AfFp7pu.png')
+                 
                  .addFields(
                      { name: 'Créé', value: ' <t:' + Math.floor(oldMsg.createdAt / 1000) + ':R>.', inline: true },
                      { name: 'ID', value: oldMsg.id, inline: true },
                      { name: 'Envoyé dans', value: '<#' + oldMsg.channelId + '> (' + oldMsg.channel.name + ')', inline: true },
                  )
                  .setTimestamp()
-                 .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
+                 
  
                  await targetChannel.send({
                      embeds: [embed]
