@@ -1,6 +1,7 @@
 # My personal Discord bot.
 > [!NOTE]
 > I use [Bun](https://bun.com/) to run this bot, but if you want, you can also use [NPM](https://www.npmjs.com/).
+
 To install dependencies:
 
 ```bash
