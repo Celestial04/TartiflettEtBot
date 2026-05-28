@@ -5,6 +5,5 @@ module.exports = {
 	once: true,
 	execute(client) {
 		console.log(`✅🤖 Loggé tant que ${client.user.tag}.`);
-		
 	},
 };
