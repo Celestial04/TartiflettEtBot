@@ -5,6 +5,6 @@ module.exports = {
 	once: true,
 	execute(client) {
 		console.log(`✅🤖 Loggé tant que ${client.user.tag}.`);
-		client.user.setPresence({ activities: [{ type: 4, name: '*rires*' }], status: 'idle' });
+		client.user.setPresence({ activities: [{ type: 4, name: '*rires*' }], status: 'idle' })
 	},
 };
